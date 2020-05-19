@@ -26,11 +26,13 @@ module.exports = function (eleventyConfig) {
    * @link https://www.11ty.io/docs/copy/
    */
   eleventyConfig.addPassthroughCopy({
-    './static': '.'
+    './static': '.',
   })
-  eleventyConfig.addPassthroughCopy(`./src/assets/css/${siteConfig.syntaxTheme}`)
+  eleventyConfig.addPassthroughCopy(
+    `./src/assets/css/${siteConfig.syntaxTheme}`
+  )
   eleventyConfig.addPassthroughCopy({
-    bundle: 'assets'
+    bundle: 'assets',
   })
 
   /**
@@ -76,10 +78,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('posts', collection => {
     return [
       ...collection
-      .getFilteredByGlob(
-        `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*`
-      )
-      .filter(livePosts),
+        .getFilteredByGlob(
+          `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*`
+        )
+        .filter(livePosts),
     ]
   })
 
@@ -102,7 +104,7 @@ module.exports = function (eleventyConfig) {
     // Set local server 404 fallback
     callbacks: {
       ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync('dist/404.html')
+        const content_404 = fs.readFileSync('dist/404/index.html')
 
         browserSync.addMiddleware('*', (req, res) => {
           // Provides the 404 content without redirect.
@@ -117,7 +119,7 @@ module.exports = function (eleventyConfig) {
    * Disable use gitignore for avoiding ignoring of /bundle folder during watch
    * https://www.11ty.dev/docs/ignores/#opt-out-of-using-.gitignore
    */
-  eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.setUseGitIgnore(false)
 
   /**
    * Eleventy configuration object
@@ -130,8 +132,8 @@ module.exports = function (eleventyConfig) {
       output: siteConfig.paths.output,
     },
     passthroughFileCopy: true,
-    templateFormats: ['njk', 'md'],
-    htmlTemplateEngine: 'njk',
-    markdownTemplateEngine: 'njk',
+    templateFormats: ['pug', 'md'],
+    htmlTemplateEngine: 'pug',
+    markdownTemplateEngine: 'pug',
   }
 }

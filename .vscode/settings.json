@@ -1,6 +1,6 @@
 {
   "emmet.includeLanguages": {
-    "njk": "html",
+    "pug": "html",
   },
   "editor.formatOnSave": true,
   "markdownlint.config": {
