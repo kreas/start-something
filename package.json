@@ -24,7 +24,7 @@
     "dev": "cross-env ELEVENTY_ENV=development run-s clean:* build:* && run-p sandbox watch",
     "arc:deploy": "arc deploy production",
     "arc:deploy:staging": "arc deploy staging",
-    "deploy": "run-s build arc:deploy:production",
+    "deploy": "run-s build arc:deploy",
     "deploy:staging": "run-s build arc:deploy:staging"
   },
   "dependencies": {
