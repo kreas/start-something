@@ -1,11 +1,13 @@
 @app
-base-project
+start-something
 
 @http
 get /api
 
+@cdn
 @static
+fingerprint true
 
-@aws
+# @aws
 # profile static
 # region us-west-1
