@@ -2,10 +2,9 @@
 base-project
 
 @http
-get /
+get /api
 
 @static
-folder dist
 
 @aws
 # profile static

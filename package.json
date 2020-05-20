@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "A blog-ready 11ty starter based on PostCSS, width RSS feed and Native Elements.",
   "author": "Mattia Astorino",
-  "main": "dist/assets/js/app.js",
+  "main": "public/assets/js/app.js",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,15 +12,16 @@
   "scripts": {
     "clean": "run-s clean:*",
     "clean:cache": "rimraf ./.cache",
-    "clean:dist": "rimraf ./dist",
+    "clean:public": "rimraf ./public",
     "clean:bundle": "rimraf ./bundle",
     "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
     "build:html": "eleventy",
     "build:assets": "parcel build ./src/site/assets/css/app.pcss ./src/site/assets/js/app.js --out-dir ./bundle --no-source-maps",
-    "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:*",
+    "watch": "eleventy --watch",
     "serve": "eleventy --serve --port=8080",
+    "sandbox": "arc sandbox",
     "watch:assets": "parcel watch ./src/site/assets/css/app.pcss ./src/site/assets/js/app.js --out-dir ./bundle --no-source-maps --no-hmr",
-    "dev": "yarn watch"
+    "dev": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p sandbox watch"
   },
   "dependencies": {
     "@11ty/eleventy": "0.10.0",
