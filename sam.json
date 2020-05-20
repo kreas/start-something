@@ -1,12 +1,12 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Transform": "AWS::Serverless-2016-10-31",
-  "Description": "Exported by architect/package@1.3.3 on 2020-05-19T17:16:34.738Z",
+  "Description": "Exported by architect/package@1.3.3 on 2020-05-20T17:08:32.875Z",
   "Resources": {
-    "BaseProject": {
+    "StartSomething": {
       "Type": "AWS::Serverless::Api",
       "Properties": {
-        "StageName": "staging",
+        "StageName": "production",
         "DefinitionBody": {
           "openapi": "3.0.1",
           "info": {
@@ -15,6 +15,30 @@
             }
           },
           "paths": {
+            "/api": {
+              "get": {
+                "responses": {
+                  "200": {
+                    "description": "200 response"
+                  }
+                },
+                "x-amazon-apigateway-integration": {
+                  "uri": {
+                    "Fn::Sub": "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${GetApi.Arn}/invocations"
+                  },
+                  "responses": {
+                    "default": {
+                      "statusCode": "200",
+                      "contentHandling": "CONVERT_TO_TEXT"
+                    }
+                  },
+                  "passthroughBehavior": "when_no_match",
+                  "httpMethod": "POST",
+                  "contentHandling": "CONVERT_TO_TEXT",
+                  "type": "aws_proxy"
+                }
+              }
+            },
             "/": {
               "get": {
                 "responses": {
@@ -121,11 +145,11 @@
         "MinimumCompressionSize": 0
       }
     },
-    "GetIndex": {
+    "GetApi": {
       "Type": "AWS::Serverless::Function",
       "Properties": {
         "Handler": "index.handler",
-        "CodeUri": "./src/http/get-index",
+        "CodeUri": "./src/http/get-api",
         "Runtime": "nodejs12.x",
         "MemorySize": 1152,
         "Timeout": 5,
@@ -137,9 +161,58 @@
             "ARC_CLOUDFORMATION": {
               "Ref": "AWS::StackName"
             },
-            "ARC_APP_NAME": "base-project",
+            "ARC_APP_NAME": "start-something",
             "ARC_HTTP": "aws_proxy",
-            "NODE_ENV": "staging",
+            "NODE_ENV": "production",
+            "SESSION_TABLE_NAME": "jwe",
+            "ARC_STATIC_BUCKET": {
+              "Ref": "StaticBucket"
+            }
+          }
+        },
+        "Role": {
+          "Fn::Sub": [
+            "arn:aws:iam::${AWS::AccountId}:role/${roleName}",
+            {
+              "roleName": {
+                "Ref": "Role"
+              }
+            }
+          ]
+        },
+        "Events": {
+          "GetApiEvent": {
+            "Type": "Api",
+            "Properties": {
+              "Path": "/api",
+              "Method": "GET",
+              "RestApiId": {
+                "Ref": "StartSomething"
+              }
+            }
+          }
+        }
+      }
+    },
+    "GetIndex": {
+      "Type": "AWS::Serverless::Function",
+      "Properties": {
+        "Handler": "index.handler",
+        "CodeUri": "/mnt/d/Workspace/start-something/__ARC_TMP__",
+        "Runtime": "nodejs12.x",
+        "MemorySize": 1152,
+        "Timeout": 5,
+        "Environment": {
+          "Variables": {
+            "ARC_ROLE": {
+              "Ref": "Role"
+            },
+            "ARC_CLOUDFORMATION": {
+              "Ref": "AWS::StackName"
+            },
+            "ARC_APP_NAME": "start-something",
+            "ARC_HTTP": "aws_proxy",
+            "NODE_ENV": "production",
             "SESSION_TABLE_NAME": "jwe",
             "ARC_STATIC_BUCKET": {
               "Ref": "StaticBucket"
@@ -163,7 +236,7 @@
               "Path": "/",
               "Method": "GET",
               "RestApiId": {
-                "Ref": "BaseProject"
+                "Ref": "StartSomething"
               }
             }
           }
@@ -183,7 +256,7 @@
             "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${restApiId}/*/*",
             {
               "restApiId": {
-                "Ref": "BaseProject"
+                "Ref": "StartSomething"
               }
             }
           ]
@@ -303,7 +376,7 @@
             }
           ]
         },
-        "Value": "false"
+        "Value": "true"
       }
     },
     "ParameterStorePolicy": {
@@ -338,10 +411,10 @@
       "Description": "API Gateway",
       "Value": {
         "Fn::Sub": [
-          "https://${restApiId}.execute-api.${AWS::Region}.amazonaws.com/staging",
+          "https://${restApiId}.execute-api.${AWS::Region}.amazonaws.com/production",
           {
             "restApiId": {
-              "Ref": "BaseProject"
+              "Ref": "StartSomething"
             }
           }
         ]
@@ -350,7 +423,7 @@
     "restApiId": {
       "Description": "HTTP restApiId",
       "Value": {
-        "Ref": "BaseProject"
+        "Ref": "StartSomething"
       }
     },
     "BucketURL": {
