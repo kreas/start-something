@@ -10,7 +10,7 @@ const fs = require('fs')
 /**
  * Import site configuration
  */
-const siteConfig = require('./src/_data/config.json')
+const siteConfig = require('./src/site/_data/config.json')
 
 module.exports = function (eleventyConfig) {
   /**
@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
     './static': '.',
   })
   eleventyConfig.addPassthroughCopy(
-    `./src/assets/css/${siteConfig.syntaxTheme}`
+    `./src/site/assets/css/${siteConfig.syntaxTheme}`
   )
   eleventyConfig.addPassthroughCopy({
     bundle: 'assets',

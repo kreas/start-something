@@ -12,7 +12,7 @@
   "codeClass": ["code-wrapper"],
   "figureClass": ["figure"],
   "paths": {
-    "src": "src",
+    "src": "src/site",
     "blogdir": "blog",
     "includes": "components",
     "output": "dist"

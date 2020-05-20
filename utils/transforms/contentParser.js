@@ -1,13 +1,13 @@
 const jsdom = require('@tbranyen/jsdom')
 const { JSDOM } = jsdom
 const slugify = require('slugify')
-const eleventyConfig = require('../../src/_data/config.json')
+const eleventyConfig = require('../../src/site/_data/config.json')
 
-function setClass(element, list) {
+function setClass (element, list) {
   list.map(item => element.classList.add(item))
 }
 
-module.exports = function(value, outputPath) {
+module.exports = function (value, outputPath) {
   if (outputPath.endsWith('.html')) {
     /**
      * create the document model
