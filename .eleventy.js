@@ -104,7 +104,7 @@ module.exports = function (eleventyConfig) {
     // Set local server 404 fallback
     callbacks: {
       ready: function (err, browserSync) {
-        const content_404 = fs.readFileSync('dist/404/index.html')
+        const content_404 = fs.readFileSync('public/404/index.html')
 
         browserSync.addMiddleware('*', (req, res) => {
           // Provides the 404 content without redirect.

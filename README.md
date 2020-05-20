@@ -132,7 +132,7 @@ Here are the default settings you will get with this project structure:
     "src": "src",
     "blogdir": "blog",
     "includes": "components",
-    "output": "dist"
+    "output": "public"
   }
 }
 ```
