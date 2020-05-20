@@ -21,7 +21,11 @@
     "serve": "eleventy --serve --port=8080",
     "sandbox": "arc sandbox",
     "watch:assets": "parcel watch ./src/site/assets/css/app.pcss ./src/site/assets/js/app.js --out-dir ./bundle --no-source-maps --no-hmr",
-    "dev": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p sandbox watch"
+    "dev": "cross-env ELEVENTY_ENV=development run-s clean:* build:* && run-p sandbox watch",
+    "arc:deploy": "arc deploy production",
+    "arc:deploy:staging": "arc deploy staging",
+    "deploy": "run-s build arc:deploy:production",
+    "deploy:staging": "run-s build arc:deploy:staging"
   },
   "dependencies": {
     "@11ty/eleventy": "0.10.0",
