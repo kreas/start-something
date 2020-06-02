@@ -46,7 +46,7 @@
     "slugify": "1.4.0",
     "tailwind": "^4.0.0",
     "turbolinks": "5.2.0",
-    "what-input": "5.2.9"
+    "what-input": "5.2.10"
   },
   "devDependencies": {
     "@architect/architect": "^6.4.0",
