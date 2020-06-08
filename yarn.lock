@@ -3512,20 +3512,20 @@ dir-glob@^3.0.1:
   dependencies:
     path-type "^4.0.0"
 
-docsify-cli@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/docsify-cli/-/docsify-cli-4.4.0.tgz#ca68b4941207f7d1ceffb4bc9f01043657077e0a"
-  integrity sha512-Ve3aUIGbjPpcjRtb3QHJQ9wI0fETMve1bBdTIztWfPnAJ2tOAYO7XUDHe9864RheGOli5s8iI3BviY6CS1ZImA==
+docsify-cli@^4.4.1:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/docsify-cli/-/docsify-cli-4.4.1.tgz#02316d7d0167de01a3ffb330c122e0900357ff1b"
+  integrity sha512-M5VU/8UCILz87D519KnURH3LA+A3RAAqj7ifDv4xOUf4c32QDkWSETS3yLmXlTNdxhATVi5P1fVklnvVW4uOyw==
   dependencies:
     chalk "^2.4.2"
     connect "^3.6.0"
     connect-livereload "^0.6.0"
     cp-file "^7.0.0"
-    docsify ">=3"
+    docsify "^4.10.2"
     docsify-server-renderer ">=4"
     fs-extra "^8.1.0"
     get-port "^5.0.0"
-    livereload "^0.8.2"
+    livereload "^0.9.1"
     lru-cache "^5.1.1"
     open "^6.4.0"
     serve-static "^1.12.1"
@@ -3543,7 +3543,7 @@ docsify-server-renderer@>=4:
     node-fetch "^2.6.0"
     resolve-pathname "^3.0.0"
 
-docsify@>=3, docsify@^4.10.2:
+docsify@^4.10.2:
   version "4.11.3"
   resolved "https://registry.yarnpkg.com/docsify/-/docsify-4.11.3.tgz#d79af6f92d48d2c1857b7f76df333db4fd6d19ec"
   integrity sha512-o9AvGb4vZOlmorg/58Kj6tNdfBaoSQUJZSFC6fJsfLjGFt45kiXhA2UmALnnVk5sol0WgSzxZlcZw6tu1gVu4Q==
@@ -5846,12 +5846,18 @@ list-to-array@^1.1.0:
   resolved "https://registry.yarnpkg.com/list-to-array/-/list-to-array-1.1.0.tgz#ca7dff640606433cac75cbe8446acd864b15bf6f"
   integrity sha1-yn3/ZAYGQzysdcvoRGrNhksVv28=
 
-livereload@^0.8.2:
-  version "0.8.2"
-  resolved "https://registry.yarnpkg.com/livereload/-/livereload-0.8.2.tgz#0ebb756cd5150bc956e33110b884bc2d7d87b723"
-  integrity sha512-8wCvhiCL4cGVoT3U5xoe+UjpiiVZLrlOvr6dbhb1VlyC5QarhrlyRRt4z7EMGO4KSgXj+tKF/dr284F28/wI+g==
+livereload-js@^3.1.0:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/livereload-js/-/livereload-js-3.2.2.tgz#fffb018fb8a8b06d366ca1b03af6048b8732d20f"
+  integrity sha512-xhScbNeC687ZINjEf/bD+BMiPx4s4q0mehcLb3zCc8+mykOtmaBR4vqzyIV9rIGdG9JjHaT0LiFdscvivCjX1Q==
+
+livereload@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/livereload/-/livereload-0.9.1.tgz#65125dabdf2db4fd3f1169e953fe56e3bcc6f477"
+  integrity sha512-9g7sua11kkyZNo2hLRCG3LuZZwqexoyEyecSlV8cAsfAVVCZqLzVir6XDqmH0r+Vzgnd5LrdHDMyjtFnJQLAYw==
   dependencies:
-    chokidar "^2.1.5"
+    chokidar "^3.3.0"
+    livereload-js "^3.1.0"
     opts ">= 1.2.0"
     ws "^6.2.1"
 
