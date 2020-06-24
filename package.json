@@ -35,7 +35,7 @@
     "@babel/core": "7.9.6",
     "@babel/preset-env": "7.8.3",
     "@tbranyen/jsdom": "13.0.0",
-    "autoprefixer": "^9.8.0",
+    "autoprefixer": "^9.8.4",
     "cssnano": "4.1.10",
     "cssnano-preset-advanced": "4.0.7",
     "eleventy-plugin-pwa": "1.0.8",
