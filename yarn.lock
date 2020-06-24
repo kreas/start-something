@@ -62,25 +62,36 @@
     time-require "^0.1.2"
     valid-url "^1.0.9"
 
-"@architect/architect@^6.4.0":
-  version "6.4.0"
-  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-6.4.0.tgz#9cc28673d63d812e67b468cae4e6abb54de0a959"
-  integrity sha512-j5rhkBa1ZpNV8HqPEhq7UKscIatW7w0EXNyKtN0Yqhr0yWB3IGsS/P2zrDbBu+0t5LXaKknviD9ZXpneZV4YmA==
+"@architect/architect@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@architect/architect/-/architect-6.5.0.tgz#7c9afa352a6831c77213a8d81aeef8cc6034f9ce"
+  integrity sha512-Evs2D2pGJ8PG2lko9uT1XXgRrRwkdtyuEBR3DNBdaDtdGo0fTika9tsOQR8pM0JibYxjKpDYj4Q+p4y66UVo6Q==
   dependencies:
-    "@architect/create" "1.0.18"
-    "@architect/deploy" "1.7.1"
+    "@architect/create" "1.1.0"
+    "@architect/deploy" "1.8.1"
+    "@architect/destroy" "1.0.2"
     "@architect/env" "1.0.10"
     "@architect/hydrate" "1.5.0"
     "@architect/logs" "1.0.11"
-    "@architect/package" "1.3.3"
+    "@architect/package" "1.3.7"
     "@architect/repl" "1.0.14"
-    "@architect/sandbox" "1.10.0"
-    "@architect/utils" "1.5.7"
+    "@architect/sandbox" "1.12.5"
+    "@architect/utils" "1.5.9"
     aws-sdk "2.644.0"
-    chalk "4.0.0"
+    chalk "4.1.0"
     update-notifier "4.1.0"
 
-"@architect/create@1.0.18", "@architect/create@~1.0.18":
+"@architect/create@1.1.0", "@architect/create@~1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@architect/create/-/create-1.1.0.tgz#90be3c7bf2396d7640c7b12ad8156d32258df9ef"
+  integrity sha512-oEM64PubpZ1J9paswIo7rVR20JgpxPzJQ9DVfXTUH8rCM5TuAeRvj6qEgSQBptIr9y71/TnkAA01lljAW8vrpg==
+  dependencies:
+    "@architect/parser" "~2.1.5"
+    "@architect/utils" "~1.5.9"
+    chalk "~4.1.0"
+    run-parallel "~1.1.9"
+
+"@architect/create@~1.0.18":
   version "1.0.18"
   resolved "https://registry.yarnpkg.com/@architect/create/-/create-1.0.18.tgz#2edd6a517c41199f4a0ed9639bd3a858a047531e"
   integrity sha512-jrd8c5uYXCPd4g+EQTqIKVKpBBuvtPsrXCce4xWlBNHMdP7VRMjDaCUXmKZp2CAxC8CmPV9cORHvi3e59nzD4A==
@@ -91,20 +102,19 @@
     mkdirp "~1.0.3"
     run-parallel "~1.1.9"
 
-"@architect/deploy@1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@architect/deploy/-/deploy-1.7.1.tgz#d8facf7d668fb6e8d38e525e96565dadc0c1508d"
-  integrity sha512-//iWc7qDu70hVy2r5VT7y7U6i1SWVOwJgg2Lfo3I7ZmPveo4+M2mxPVjfpYQpsZUmD0lhMkl80UmH5Mur+rOpw==
+"@architect/deploy@1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@architect/deploy/-/deploy-1.8.1.tgz#db17a10b2b9c9f131ca6412e26f9c89d0e3eef43"
+  integrity sha512-tEcAl7qKtB3pjPHyw+YBqs350YlLzyFgMvN+nmbIDv5uthuh2mzPg64jBXyXc5TF+NzVY+ZjEsmDsloshWxapg==
   dependencies:
-    "@architect/create" "~1.0.18"
+    "@architect/create" "~1.1.0"
     "@architect/hydrate" "~1.5.0"
-    "@architect/package" "~1.3.3"
-    "@architect/parser" "~2.1.3"
-    "@architect/utils" "~1.5.3"
-    aws-sdk "~2.644.0"
-    chalk "~4.0.0"
+    "@architect/package" "~1.3.7"
+    "@architect/parser" "~2.1.5"
+    "@architect/utils" "~1.5.9"
+    chalk "~4.1.0"
     glob "~7.1.6"
-    mime-types "~2.1.26"
+    mime-types "~2.1.27"
     ospath "~1.2.2"
     path-sort "~0.1.0"
     rimraf "~3.0.2"
@@ -114,6 +124,15 @@
     sha "~3.0.0"
     zip-dir "~1.0.2"
     zipit "~2.0.0"
+
+"@architect/destroy@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@architect/destroy/-/destroy-1.0.2.tgz#20bc3f2692a9a41d0e8f9c1d267d2086f1034fc0"
+  integrity sha512-TJ70ExcmU27T4bX9C6i7xdssvbYfUSrniMiZQGi3mQ0Nf6qvZHFhjmhQjKSimV8n2gHuYk7O461nuzVqjFS0Lg==
+  dependencies:
+    "@architect/parser" "~2.1.5"
+    aws-sdk "~2.644.0"
+    run-waterfall "~1.1.6"
 
 "@architect/env@1.0.10":
   version "1.0.10"
@@ -145,6 +164,11 @@
   resolved "https://registry.yarnpkg.com/@architect/http-proxy/-/http-proxy-3.10.1.tgz#b82bc8d4ee1ea10f4134d640a77ce60c9eff6261"
   integrity sha512-uMmdyt/u9kuP7lf4yU/lw4taASoH/jMrK3xyLkjPgFgReK2ag15sLxsYRaMm53PCVY04tc57igVlWArUX2v73w==
 
+"@architect/http-proxy@~3.12.0", "@architect/http-proxy@~3.12.1":
+  version "3.12.1"
+  resolved "https://registry.yarnpkg.com/@architect/http-proxy/-/http-proxy-3.12.1.tgz#73948545b062ed6341efc2a729073c6134a9b1f1"
+  integrity sha512-FX2ymmv/mX93QG8ZhCFUVyDTSlbbdCENS08zEPR2F3le2146ll1Nlc+nUWkDEL1zPlLQi63TtGrmOFqs0tEucQ==
+
 "@architect/hydrate@1.5.0", "@architect/hydrate@~1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@architect/hydrate/-/hydrate-1.5.0.tgz#9e31152dc22fbcf09d304f70acf56874340c2d36"
@@ -171,22 +195,26 @@
     run-waterfall "~1.1.6"
     strftime "~0.10.0"
 
-"@architect/package@1.3.3", "@architect/package@~1.3.3":
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/@architect/package/-/package-1.3.3.tgz#fd8e4b1d972a94f0b8513ddac59a651ec03be9f3"
-  integrity sha512-yyvPH5xA9F00aMbQC5ariiW0R8+Obatyswo2j7rflaTMJPBPUauGXhoCHh+nhXo9SC5G1hATvou4uvarR+I+dQ==
+"@architect/package@1.3.7", "@architect/package@~1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@architect/package/-/package-1.3.7.tgz#5a9e5879aa905f63e96069a59745a37c3565c22c"
+  integrity sha512-71klyPm0sEZCRwzhfmb3uTMGsVzkEdmOgutIrk82Imx1VSh3BjykILhXvDQAqoofiBr1+drtGLSEt3q4kD7Mhg==
   dependencies:
-    "@architect/http-proxy" "~3.10.1"
-    "@architect/parser" "~2.1.1"
-    "@architect/utils" "~1.5.1"
+    "@architect/http-proxy" "~3.12.0"
+    "@architect/parser" "~2.1.5"
+    "@architect/utils" "~1.5.9"
     glob "~7.1.6"
-    mime-types "~2.1.26"
-    mkdirp "~1.0.3"
+    mime-types "~2.1.27"
 
 "@architect/parser@~2.1.1", "@architect/parser@~2.1.3":
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/@architect/parser/-/parser-2.1.3.tgz#f981ed4ba5662f0ac4fb3fb14b20a91167917f5e"
   integrity sha512-BfaGCQG8rys/hbMz/7rffIHwUEx0Ya03cMTFbOmrKVLHQBbHXxLWqnUqeGJmROB7TiOnypSzgwPB5LMLt7DV4w==
+
+"@architect/parser@~2.1.5":
+  version "2.1.5"
+  resolved "https://registry.yarnpkg.com/@architect/parser/-/parser-2.1.5.tgz#dee2337c398375c5f65ef1d5946bad369ac028a6"
+  integrity sha512-EJldxUX+HT63WWKYiFDkcuz/fF/GpToQCzfD010/X4XVSVh4CiwTRy6ZpV/kUmZKYdBgjoZbySryxteigYDMSA==
 
 "@architect/repl@1.0.14":
   version "1.0.14"
@@ -199,7 +227,36 @@
     chalk "~4.0.0"
     repl "~0.1.3"
 
-"@architect/sandbox@1.10.0", "@architect/sandbox@~1.10.0":
+"@architect/sandbox@1.12.5":
+  version "1.12.5"
+  resolved "https://registry.yarnpkg.com/@architect/sandbox/-/sandbox-1.12.5.tgz#9363051259a72e71923902c945b51c5faead4aa8"
+  integrity sha512-iZ3/gRpCnQP+H7v5cDw/f+VDX84aGkILZe/xISijgsTS3qvthEXK/dtZPocJGkAMpvj+xjridF45KM+/8KTCxQ==
+  dependencies:
+    "@architect/create" "~1.1.0"
+    "@architect/http-proxy" "~3.12.1"
+    "@architect/hydrate" "~1.5.0"
+    "@architect/parser" "~2.1.5"
+    "@architect/utils" "~1.5.9"
+    "@begin/hashid" "~1.0.0"
+    aws-sdk "~2.644.0"
+    body-parser "~1.19.0"
+    chalk "~4.1.0"
+    depstatus "~1.1.0"
+    dynalite "~3.2.0"
+    finalhandler "~1.1.2"
+    glob "~7.1.6"
+    node-watch "~0.6.4"
+    ospath "~1.2.2"
+    router "~1.3.5"
+    run-parallel "~1.1.9"
+    run-series "~1.1.8"
+    run-waterfall "~1.1.6"
+    send "~0.17.1"
+    tree-kill "~1.2.2"
+    update-notifier "~4.1.0"
+    ws "~7.3.0"
+
+"@architect/sandbox@~1.10.0":
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/@architect/sandbox/-/sandbox-1.10.0.tgz#b0967a756320a0426f84f382d9f479ae13f14943"
   integrity sha512-qZPM6TLat1v/szwHn2IPexPrtp1hIBRT+uvnzWZ6aw1zKJpSDjHWr8f626XUxGvt3c3WWoY2VQrxWWtSm10WYg==
@@ -228,17 +285,16 @@
     uuid "~7.0.3"
     ws "~7.3.0"
 
-"@architect/utils@1.5.7", "@architect/utils@~1.5.1", "@architect/utils@~1.5.3":
-  version "1.5.7"
-  resolved "https://registry.yarnpkg.com/@architect/utils/-/utils-1.5.7.tgz#56dad5b9d7648c90159cb79a13a9fbe8162e6d3d"
-  integrity sha512-LAbl/0YkJTXxomWiwwsOtLTxxbm9Q3fYJR+9x9oRXFj6GjCub9nNs1hqB8Bw91Xn84sy4sHkCH0IO3b9zvQgeA==
+"@architect/utils@1.5.9", "@architect/utils@~1.5.1", "@architect/utils@~1.5.3", "@architect/utils@~1.5.9":
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/@architect/utils/-/utils-1.5.9.tgz#2f5449e37b71cb8a99add849591dd5929322c70c"
+  integrity sha512-oGjfTXw4cIdn3cWHuuWirOm83MFTEwOvIduFZl4GM6m6YuXTD9ljnATehaGhO4XAGbmJYo1zcY+YkIi6cG/JHw==
   dependencies:
-    "@architect/parser" "~2.1.1"
+    "@architect/parser" "~2.1.3"
     "@smallwins/validate" "~4.3.0"
     chalk "~4.0.0"
     glob "~7.1.6"
     is-domain-name "~1.0.1"
-    mkdirp "~1.0.3"
     path-sort "~0.1.0"
     restore-cursor "~3.1.0"
     run-parallel "~1.1.9"
@@ -1127,6 +1183,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@begin/hashid@~1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@begin/hashid/-/hashid-1.0.0.tgz#e3e3f9698423cdd74855f99b2411ed50ed6cf041"
+  integrity sha512-w+U9klEtRkt7hyW/f+/SvwPgJ4CTMO2ENddisX9dGgLUZKu+iKpb/IhYnQWIt9/Nnm/5DkApmiHGimPs621wwA==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -1343,7 +1404,7 @@ abbrev@1:
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
-abstract-leveldown@^6.1.1, abstract-leveldown@^6.2.1:
+abstract-leveldown@^6.1.1, abstract-leveldown@^6.2.1, abstract-leveldown@^6.2.3:
   version "6.3.0"
   resolved "https://registry.yarnpkg.com/abstract-leveldown/-/abstract-leveldown-6.3.0.tgz#d25221d1e6612f820c35963ba4bd739928f6026a"
   integrity sha512-TU5nlYgta8YrBMNpc9FwQzRbiXsj49gsALsXadbGHt9CROPzX5fB0rWDR5mtdpOOKa5XqRFpbj1QroPAoPzVjQ==
@@ -2431,10 +2492,10 @@ chalk@2.4.1:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
-chalk@4.0.0, chalk@^4.0.0, chalk@~4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.0.0.tgz#6e98081ed2d17faab615eb52ac66ec1fe6209e72"
-  integrity sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
+chalk@4.1.0, chalk@^4.0.0, chalk@~4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
+  integrity sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
@@ -2472,6 +2533,14 @@ chalk@^3.0.0, chalk@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-3.0.0.tgz#3f73c2bf526591f574cc492c51e2456349f844e4"
   integrity sha512-4D3B6Wf41KOYRFdszmDqMCGq5VV/uMAB273JILmO+3jAlh8X4qDtdtgCR3fxtbLEMzSx22QdhnDcJvu2u1fVwg==
+  dependencies:
+    ansi-styles "^4.1.0"
+    supports-color "^7.1.0"
+
+chalk@~4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.0.0.tgz#6e98081ed2d17faab615eb52ac66ec1fe6209e72"
+  integrity sha512-N9oWFcegS0sFr9oh1oz2d7Npos6vNoWW9HvtCg5N1KRFpUhaAhvTv5Y58g880fZaEYSNm3qDz8SU1UrGvp+n7A==
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
@@ -3664,6 +3733,24 @@ dynalite@~3.1.6:
     minimist "^1.2.5"
     once "^1.4.0"
     subleveldown "^4.1.4"
+  optionalDependencies:
+    leveldown "^5.2.1"
+
+dynalite@~3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/dynalite/-/dynalite-3.2.0.tgz#dd9eeac7fd69e36ff71d11cb2e7920c1f4110f5b"
+  integrity sha512-ONNyuMiOX1ETiVYc4bj/Bd7lA78Su8VgO1EdLEhSpJr+xJ6DjzTvKZlmIq3mmuuEvc8VyFkjif2eEzV4SPZIOg==
+  dependencies:
+    async "^2.6.3"
+    big.js "^5.2.2"
+    buffer-crc32 "^0.2.13"
+    lazy "^1.0.11"
+    levelup "^4.4.0"
+    lock "^1.1.0"
+    memdown "^5.1.0"
+    minimist "^1.2.5"
+    once "^1.4.0"
+    subleveldown "^5.0.0"
   optionalDependencies:
     leveldown "^5.2.1"
 
@@ -5785,7 +5872,7 @@ leveldown@^5.2.1:
     napi-macros "~2.0.0"
     node-gyp-build "~4.1.0"
 
-levelup@^4.3.1, levelup@^4.3.2:
+levelup@^4.3.1, levelup@^4.3.2, levelup@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/levelup/-/levelup-4.4.0.tgz#f89da3a228c38deb49c48f88a70fb71f01cafed6"
   integrity sha512-94++VFO3qN95cM/d6eBXvd894oJE0w3cInq9USsyQzzoJxmiYzPAocNcuGCPGGjoXqDVJcr3C1jzt1TSjyaiLQ==
@@ -6247,7 +6334,7 @@ mime-db@1.44.0, "mime-db@>= 1.43.0 < 2":
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.44.0.tgz#fa11c5eb0aca1334b4233cb4d52f10c5a6272f92"
   integrity sha512-/NOTfLrsPBVeH7YtFPgsVWveuL+4SjjYxaQ1xtM1KMFj7HdxlBlxeyNLzhyJVx7r4rZGJAZ/6lkKCitSc/Nmpg==
 
-mime-types@^2.1.12, mime-types@^2.1.27, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24, mime-types@~2.1.26:
+mime-types@^2.1.12, mime-types@^2.1.27, mime-types@~2.1.17, mime-types@~2.1.19, mime-types@~2.1.24, mime-types@~2.1.27:
   version "2.1.27"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.27.tgz#47949f98e279ea53119f5722e0f34e529bec009f"
   integrity sha512-JIhqnCasI9yD+SsmkquHBxTSEuZdQX5BuQnS2Vc7puQQQ+8yiP5AY5uWhpdv4YL4VM5c6iliiYWPgJ/nJQLp7w==
@@ -8388,7 +8475,7 @@ rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-reachdown@^1.0.0:
+reachdown@^1.0.0, reachdown@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/reachdown/-/reachdown-1.1.0.tgz#c3b85b459dbd0fe2c79782233a0a38e66a9b5454"
   integrity sha512-6LsdRe4cZyOjw4NnvbhUd/rGG7WQ9HMopPr+kyL018Uci4kijtxcGR5kVb5Ln13k4PEE+fEFQbjfOvNw7cnXmA==
@@ -9611,6 +9698,18 @@ subleveldown@^4.1.4:
     level-option-wrap "^1.1.0"
     levelup "^4.3.1"
     reachdown "^1.0.0"
+
+subleveldown@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/subleveldown/-/subleveldown-5.0.0.tgz#40449c28b418d83569efdb48acebe29d7b55b557"
+  integrity sha512-DotbiAIyOWSsidM06/m+EsBHXRyP7EgPlDDD5GVn6JcoDFcVZbp+VN9bOdErNtDWwgR+lJDuKwcJ8nKqSq9Ixg==
+  dependencies:
+    abstract-leveldown "^6.2.3"
+    encoding-down "^6.2.0"
+    inherits "^2.0.3"
+    level-option-wrap "^1.1.0"
+    levelup "^4.3.1"
+    reachdown "^1.1.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
